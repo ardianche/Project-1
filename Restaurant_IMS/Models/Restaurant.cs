@@ -12,5 +12,6 @@ namespace Restaurant_IMS.Models
 
         public String emri { get; set; }
 
+        public Kuzhina Kuzhina { get; set; }
     }
 }

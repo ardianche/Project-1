@@ -29,9 +29,30 @@ namespace Restaurant_IMS.Controllers
         }
 
         public IActionResult Details(int id)
-        {
+        { 
             var model = _restaurantData.Get(id);
+            if(model == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
             return View(model);
+        }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Create(RestaurantEdit model)
+        {
+            var newRestaurant = new Restaurant();
+            newRestaurant.emri = model.emri;
+            newRestaurant.Kuzhina = model.Kuzhina;
+
+            newRestaurant = _restaurantData.Add(newRestaurant);
+
+            return RedirectToAction(nameof(Details), new { id = newRestaurant.Id });
         }
     }
 }

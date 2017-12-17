@@ -1,0 +1,10 @@
+﻿@using Restaurant_IMS.Models
+@model Restaurant
+
+<h1>Create</h1>
+
+<form method="post">
+    <input asp-for="emri" />
+    <select asp-for="Kuzhina" asp-items="@Html.GetEnumSelectList<Kuzhina>()"></select>
+    <input type="submit" name="save" value="Save" />
+</form>
