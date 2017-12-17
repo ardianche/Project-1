@@ -4,7 +4,16 @@
 <h1>Create</h1>
 
 <form method="post">
-    <input asp-for="emri" />
-    <select asp-for="Kuzhina" asp-items="@Html.GetEnumSelectList<Kuzhina>()"></select>
+    <div>
+        <label asp-for="emri"></label>
+        <input asp-for="emri" />
+        <span asp-validation-for="emri"></span>
+    </div>
+    <div>
+        <label asp-for="Kuzhina"></label>
+        <select asp-for="Kuzhina"
+                asp-items="@Html.GetEnumSelectList<Kuzhina>()"></select>
+        <span asp-validation-for="Kuzhina"></span>
+    </div>
     <input type="submit" name="save" value="Save" />
 </form>

@@ -46,13 +46,20 @@ namespace Restaurant_IMS.Controllers
         [HttpPost]
         public IActionResult Create(RestaurantEdit model)
         {
-            var newRestaurant = new Restaurant();
-            newRestaurant.emri = model.emri;
-            newRestaurant.Kuzhina = model.Kuzhina;
+            if (ModelState.IsValid)
+            {
+                var newRestaurant = new Restaurant();
+                newRestaurant.emri = model.emri;
+                newRestaurant.Kuzhina = model.Kuzhina;
 
-            newRestaurant = _restaurantData.Add(newRestaurant);
+                newRestaurant = _restaurantData.Add(newRestaurant);
 
-            return RedirectToAction(nameof(Details), new { id = newRestaurant.Id });
+                return RedirectToAction(nameof(Details), new { id = newRestaurant.Id });
+            }
+            else
+            {
+                return View();
+            }
         }
     }
 }
