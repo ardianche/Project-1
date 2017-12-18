@@ -1,0 +1,32 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Restaurant_IMS.Models;
+using Restaurant_IMS.Data;
+
+namespace Restaurant_IMS.Services
+{
+    public class SqlRestaurantData : IRestaurantData
+    {
+        private RestaurantDbContext _context;
+
+        public SqlRestaurantData(RestaurantDbContext context)
+        {
+            _context = context;
+        }
+        public Restaurant Add(Restaurant restaurant)
+        {
+            
+        }
+
+        public Restaurant Get(int id)
+        {
+            
+        }
+
+        public IEnumerable<Restaurant> GetAll()
+        { 
+        }
+    }
+}
