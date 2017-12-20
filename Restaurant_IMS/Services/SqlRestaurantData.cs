@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Restaurant_IMS.Models;
 using Restaurant_IMS.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace Restaurant_IMS.Services
 {
@@ -31,6 +32,14 @@ namespace Restaurant_IMS.Services
 
         {
             return _context.Restaurants.OrderBy(r => r.emri);
+        }
+
+        public Restaurant Update(Restaurant restaurant)
+        {
+            _context.Attach(restaurant).State = 
+                EntityState.Modified;
+            _context.SaveChanges();
+            return restaurant;
         }
     }
 }

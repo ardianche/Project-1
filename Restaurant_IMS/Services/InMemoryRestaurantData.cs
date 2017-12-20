@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Restaurant_IMS.Services
 {
-    public class InMemoryRestaurantData : IRestaurantData
+    /*public class InMemoryRestaurantData : IRestaurantData
     {
         public InMemoryRestaurantData()
         {
@@ -17,7 +17,7 @@ namespace Restaurant_IMS.Services
                 new Restaurant {Id = 3, emri ="Test 3"}
             };
         }
-        
+
         public IEnumerable<Restaurant> GetAll()
         {
             return _restaurants.OrderBy(r => r.emri);
@@ -37,5 +37,5 @@ namespace Restaurant_IMS.Services
 
         List<Restaurant> _restaurants;
 
-    }
+    } */
 }

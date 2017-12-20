@@ -1,0 +1,20 @@
+﻿@page "{id}"
+@using Restaurant_IMS.Pages.Restaurants;
+@model EditModel
+
+<h1> Editing @Model.Restaurant.emri</h1>
+<form method="post">
+    <input type="hidden" asp-for="Restaurant.Id"/>
+    <div>
+        <label asp-for="Restaurant.emri"></label>
+        <input asp-for="Restaurant.emri" />
+        <span asp-validation-for="Restaurant.emri"></span>
+    </div>
+    <div>
+        <label asp-for="Restaurant.Kuzhina"></label>
+        <select asp-for="Restaurant.Kuzhina"
+                asp-items="@Html.GetEnumSelectList<Kuzhina>()"></select>
+        <span asp-validation-for="Restaurant.Kuzhina"></span>
+    </div>
+    <input type="submit" name="save" value="Save" />
+</form>

@@ -1,0 +1,12 @@
+﻿@model Restaurant_IMS.Models.Restaurant
+
+    <section>
+        <h3>@Model.emri</h3>
+        <div>
+            Kuzhina : @Model.Kuzhina
+        </div>
+        <div>
+            <a asp-action="Details" asp-route-id="@Model.Id">More</a>
+            <a asp-page="/Restaurants/Edit" asp-route-id="@Model.Id">Edit</a>
+        </div>
+    </section>
