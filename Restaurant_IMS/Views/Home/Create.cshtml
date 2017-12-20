@@ -3,8 +3,28 @@
 @{ 
     ViewBag.Title = "Create";
 }
-<h1>Create</h1>
+<style>
+    hr.style18 {
+        height: 30px;
+        border-style: solid;
+        border-color: #8c8b8b;
+        border-width: 1px 0 0 0;
+        border-radius: 20px;
+    }
 
+        hr.style18:before {
+            display: block;
+            content: "";
+            height: 30px;
+            margin-top: -31px;
+            border-style: solid;
+            border-color: #8c8b8b;
+            border-width: 0 0 1px 0;
+            border-radius: 20px;
+        }
+</style>
+<h1>Create</h1>
+<hr class="style18" style="border-top: 1px solid #8c8b8b;" />
 <form method="post">
     <div>
         <label asp-for="emri"></label>
@@ -17,5 +37,5 @@
                 asp-items="@Html.GetEnumSelectList<Kuzhina>()"></select>
         <span asp-validation-for="Kuzhina"></span>
     </div>
-    <input type="submit" name="save" value="Save" />
+    <input class="btn btn-primary"type="submit" name="save" value="Save" />
 </form>

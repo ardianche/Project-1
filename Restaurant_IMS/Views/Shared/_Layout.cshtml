@@ -2,16 +2,28 @@
 
 <html>
 <head>
+    <link href="~/node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
 </head>
 <body>
-    <div>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/" style="font-size:25px;">Restaurants</a>
+            </div>
+            <div class="navbar-right">
+                <button type="button" class="btn btn-default">Log in</button>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
         @RenderBody()
+        <footer>
+            @RenderSection("footer", required: false)
+         
+        </footer>
     </div>
-    <footer>
-        @RenderSection("footer",required:false)
-        <vc:greeter></vc:greeter>
-    </footer>
+    
 </body>
 </html>

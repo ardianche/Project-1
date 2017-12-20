@@ -1,12 +1,12 @@
 ﻿@model Restaurant_IMS.Models.Restaurant
 
-    <section>
-        <h3>@Model.emri</h3>
-        <div>
+    <section class="panel panel-default">
+        <h3 class="panel-heading">@Model.emri</h3>
+        <div class="panel body">
             Kuzhina : @Model.Kuzhina
         </div>
-        <div>
-            <a asp-action="Details" asp-route-id="@Model.Id">More</a>
-            <a asp-page="/Restaurants/Edit" asp-route-id="@Model.Id">Edit</a>
+        <div class="panel-footer">
+            <a class="btn btn-default" asp-action="Details" asp-route-id="@Model.Id">More</a>
+            <a class="btn btn-default" asp-page="/Restaurants/Edit" asp-route-id="@Model.Id">Edit</a>
         </div>
     </section>
