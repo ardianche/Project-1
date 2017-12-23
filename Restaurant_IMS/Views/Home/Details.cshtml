@@ -3,10 +3,16 @@
     ViewBag.Title = Model.emri;
 }
 
-<h1>@Model.emri</h1>
-<div> ... details ... </div>
-<div>
-    ID: @Model.Id;
-    Kuzhina: @Model.Kuzhina;
+<h1 class="header">@Model.emri</h1>
+<div class="col-md-12"> Details: </div>
+<br />
+<div class="panel">
+    <div class="panel-body">
+
+        ID: @Model.Id 
+        <br />
+        Kuzhina: @Model.Kuzhina 
+    </div>
+   
 </div>
-<a asp-action="Index" asp-controller="Home">Home</a>
+<button class="btn btn-primary"style="float:right;"> <a asp-action="Index" asp-controller="Home" style="color:white;" >Back </a></button>
